@@ -1,0 +1,29 @@
+cat > .gitignore << 'EOF'
+# Ignore everything outside the current directory
+../
+../../
+../../../
+
+# Common system files
+.DS_Store
+.Trashes
+
+# R specific files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+EOF
