@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Musicians' Health"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - media.qmd
+      - performance_experience.qmd
+      - music_industry.qmd
+      - publications.qmd
+      - streaming.qmd
+    tools:
+      - icon: linkedin
+        href: https://linkedin.com/in/lia-88oo/
+      - icon: github
+        href: https://github.com/0r080r0
+      - icon: twitch
+        href: https://twitch.com/
+      - icon: envelope
+        href: "mailto:hakaiosan@gmail.com"
+  page-footer:
+    right: "Built with R and [Quarto](https://quarto.org/)"
+    left: "Copyright &copy; 2024 by Evangelia Karakoliou - Musician & Researcher"
+
+# Define static assets (audio files, images & videos)
+static-assets:
+  - "img/"
+  - "audio/"
+  - "videos/"
+
+# Adding a media section to your site configuration
+audio_files:
+  - "audio/Flumine.wav"
+  - "audio/ICD.wav"
+  - "audio/Delirium.wav"
+  - "audio/Intro.wav"
+  - "audio/Dark.wav"
+  - "audio/Shadow.wav"
+  - "audio/ShadowOfTheSunAcoustic.wav"
+
+format:
+  html:
+    theme: solar
+    css: styles.css      # Custom CSS for the page (make sure this file is in the project folder)
+    include-in-header:
+      - text: |
+          <style>
+          html {
+            scroll-behavior: smooth;
+            overflow-y: scroll; /* Always show scrollbar */
+          }
+          </style>
+    toc: true             # Table of contents, optional
+editor: source           # Set the editor to source mode (optional)

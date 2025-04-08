@@ -1,0 +1,127 @@
+---
+title: "Publications"
+format: html
+---
+<!-- Particles.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<style>
+  /* Set the body and html to cover the full screen */
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  /* Container for the header and particles */
+  #particles-header {
+    position: fixed; /* Fixed at the top */
+    top: 0; /* Place it at the very top of the page */
+    left: 0;
+    height: 100px; /* Height of the header (particles height) */
+    width: 100%; /* Full width of the screen */
+    z-index: 1; /* Ensure particles stay behind the header content */
+  }
+  /* Main title styles - taken from the document title */
+  h1 {
+    position: absolute;
+    z-index: 2; /* Ensure title stays on top of particles */
+    font-size: 35px; /* Smaller font size for the title */
+    top: 0px; /* Move the title a bit closer to the upper limit of the page */
+    left: 50%;
+    transform: translateX(-50%); /* Center the title horizontally */
+    color: white; /* Ensure the title is visible */
+  }
+  /* Content below the header - adjusted position */
+  .content {
+    padding-top: 60px;
+    text-align: left; /* Left align the content */
+    font-size: 18px;
+    margin-left: 0px;
+  }
+  /* Styling for the heading - normal weight */
+  .heading-style {
+    font-size: 30px;
+    font-weight: normal;
+    margin-left: 0px;
+    margin-top: 0px;
+    color: white;
+  }
+</style>
+<!-- Particles background container -->
+<div id="particles-header">
+  <!-- Div for particles -->
+  <div id="particles-js"></div>
+</div>
+<!-- Main content -->
+<div class="content">
+  <!-- Research Articles title - Using H2 tag to leverage Quarto's default heading styling -->
+  <h3 class="heading-style" style="font-weight: 600;">Research Articles</h3>
+  <br>
+  
+  <strong style="color: #9A670E;">
+    Submitted for Publication:
+  </strong>
+  <br><br>
+  <span style="color: white;">
+    Bjälkebring, P., Karakoliou, E., Fransson, N. (2025). The Effect of Music Listening on Rehabilitation for Motricity in Parkinson's Disease: A Review and Meta-Analysis.
+  </span>
+</div>
+<script>
+  // Initialize particles.js
+  particlesJS('particles-js', {
+    particles: {
+      number: {
+        value: 200, // Increased number of particles for a more dynamic effect
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      shape: {
+        type: 'circle', // Use circles for dust-like particles
+      },
+      opacity: {
+        value: 0.5, // Slight opacity for glowing effect
+        random: true,
+        anim: {
+          enable: true,
+          speed: 1.5,
+          opacity_min: 0.1
+        }
+      },
+      size: {
+        value: 2, // Smaller particle size for dust-like effect
+        random: true,
+        anim: {
+          enable: true,
+          speed: 3,
+          size_min: 1
+        }
+      },
+      move: {
+        enable: true,
+        speed: 1.5, // Slightly slower movement speed for wave-like flow
+        direction: 'random', // Random direction for particles
+        random: true,
+        out_mode: 'out', // Particles disappear when they move out of view
+        attract: {
+          enable: false
+        }
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: {
+          enable: true,
+          mode: 'repulse' // Repulse particles on hover
+        }
+      }
+    },
+    color: {
+      value: ["#FF0044", "#00FFFF", "#FF00FF", "#FFFF00", "#00FF00"] // Colorful particles (light purple, cyan, green, yellow, pink)
+    },
+    background: {
+      color: "transparent" // Keep the page background transparent for default color
+    }
+  });
+</script>

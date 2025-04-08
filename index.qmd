@@ -1,0 +1,284 @@
+---
+title: "Welcome fellow musicians!"
+about:
+    id: me
+    template: broadside
+    image: img/profile.jpeg
+output:
+    html:
+        theme: solar       # Solar theme
+        css: styles.css    # Link to your custom CSS
+        toc: true           # Optional: Adds a table of contents
+editor: source         # Use source editor mode (optional)
+---
+
+<div class="video-banner">
+  <!-- Video background with autoplay, loop, and initial muted state -->
+  <video id="banner-video" autoplay loop muted class="video-banner-bg">
+    <source src="videos/your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  <!-- Banner Content
+  <div class="banner-content">
+    <h1>Welcome fellow musicians!</h1>
+    <p> Add short content.</p>
+  </div>
+  -->
+  
+  <!-- Audio Toggle Button -->
+  <button id="audio-toggle-btn" class="audio-toggle-btn">Unmute Audio</button>
+</div>
+
+<!-- Link to external CSS file -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- JavaScript to handle audio toggle -->
+<script>
+  // Get the video element and the toggle button
+  const video = document.getElementById('banner-video');
+  const toggleButton = document.getElementById('audio-toggle-btn');
+  
+  // Toggle the video mute state when the button is clicked
+  toggleButton.addEventListener('click', function() {
+    if (video.muted) {
+      video.muted = false;
+      toggleButton.innerText = 'Mute Audio';
+    } else {
+      video.muted = true;
+      toggleButton.innerText = 'Unmute Audio';
+    }
+  });
+</script>
+
+<!-- Add IDs to text elements for typewriter effect -->
+:::{#me}
+<h2 id="goals-heading">Goals</h2>
+<p id="goals-text">As an aspiring consultant and researcher, I am passionate about using my expertise to support the well-being of performing artists. My focus is on helping professional musicians manage both mental and physical health challenges, especially the unique pressures that come with touring, through evidence-based strategies and interventions.</p>
+
+<h2 id="education-heading">Education & Experience</h2>
+<p id="education-text">With my unique experience in the music industry, international background in Psychological Science and my own activity as a drummer and vocalist, I will help you to enhance your performance while prioritising your health - for a sustainable and fulfilling career!</p>
+:::
+
+<span id="final-text">Tune in for my weekly Twitch streams to gain valuable insights into musicians' health!</span>
+
+<style>
+  /* Complete isolation of the profile image from any animations or reflows */
+  .about-image, 
+  .quarto-about-image,
+  #me .quarto-about-image,
+  .quarto-title-meta-heading img,
+  img[src="img/profile.jpeg"],
+  .broadside img[src="img/profile.jpeg"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    /* Force GPU acceleration and isolate rendering layer */
+    will-change: transform;
+    transform: translateZ(0);
+    /* Prevent layout shifts from affecting image */
+    position: relative;
+    z-index: 100;
+  }
+  
+  /* Prevent reflow impact by ensuring text elements don't cause container shifts */
+  #me h2, #me p, #final-text {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0s, opacity 0s;
+  }
+  
+  /* When text elements become visible, restore their height smoothly */
+  #me h2.visible, #me p.visible, #final-text.visible {
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+  }
+  
+  /* Preserve container heights during typewriter effect */
+  #me {
+    min-height: 200px; /* Adjust based on your content */
+  }
+  
+  body { /* Target the body for default white text */
+    color: white;
+  }
+  
+  /* Page title (from YAML frontmatter) styles */
+  /* This targets the h1 that Quarto automatically creates from the YAML title */
+  h1.title {
+    opacity: 0; /* Start invisible for typewriter effect */
+    border-right: 0.15em solid transparent; /* Prepare for cursor effect */
+  }
+  
+  /* Cursor effect for elements being typed */
+  .typing {
+    border-right: 0.15em solid white;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+  }
+  
+  /* Ensure broadside template layout is preserved */
+  .broadside {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Ensure no duplicate images are shown */
+  .broadside img:not([src="img/profile.jpeg"]) {
+    display: none !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // First, force image to be visible and stable before anything else happens
+    function stabilizeImage() {
+      // Comprehensive targeting of all potential image elements
+      const imageSelectors = [
+        'img[src="img/profile.jpeg"]',
+        '.about-image img',
+        '.quarto-about-image img',
+        '.broadside img'
+      ];
+      imageSelectors.forEach(selector => {
+        const images = document.querySelectorAll(selector);
+        images.forEach(img => {
+          // Clone and replace the image to remove any bound effects
+          const parent = img.parentNode;
+          const clone = img.cloneNode(true);
+          // Apply critical styles to the clone
+          clone.style.cssText = `
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            position: relative;
+            z-index: 100;
+          `;
+          // Replace the original with the clone
+          if (parent) {
+            parent.replaceChild(clone, img);
+            // Also stabilize the parent container
+            parent.style.cssText += `
+              opacity: 1 !important;
+              visibility: visible !important;
+              display: block !important;
+              animation: none !important;
+              transition: none !important;
+            `;
+          }
+        });
+      });
+      // Also target any container with ID "me"
+      const meContainer = document.getElementById('me');
+      if (meContainer) {
+        const meImages = meContainer.querySelectorAll('img');
+        meImages.forEach(img => {
+          img.style.cssText = `
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+            animation: none !important;
+            transition: none !important;
+          `;
+        });
+      }
+    }
+    // Run immediately and after a short delay to catch template rendering
+    stabilizeImage();
+    setTimeout(stabilizeImage, 50);
+    // Modify the typewriter effect to add a class instead of changing innerHTML directly
+    function typeText(element, text, speed, callback) {
+      element.classList.add('typing');
+      element.classList.add('visible'); // Make element visible but preserve height
+      let displayText = '';
+      let index = 0
+      function type() {
+        if (index < text.length) {
+          displayText += text.charAt(index);
+          element.innerHTML = displayText;
+          index++;
+          setTimeout(type, speed);
+          // Re-stabilize the image periodically
+          if (index % 5 === 0) stabilizeImage();
+        } else {
+          element.classList.remove('typing');
+          if (callback) setTimeout(callback, 200);
+          stabilizeImage(); // Re-stabilize after typing is complete
+        }
+      }
+      type();
+    }
+    // Find the main title from the YAML frontmatter (Quarto generates this)
+    const mainTitle = document.querySelector('h1.title');
+    if (mainTitle) {
+      // Store original content and clear it for typewriter effect
+      const titleContent = mainTitle.textContent;
+      mainTitle.textContent = '';
+      mainTitle.style.opacity = '1';
+      // Apply typewriter effect to the page title first
+      typeText(mainTitle, titleContent, 100, function() {
+        // Call stabilizeImage once more before continuing
+        stabilizeImage();
+        startContentTypewriter();
+      });
+    } else {
+      // If title can't be found, proceed with content typewriter
+      startContentTypewriter();
+    }
+    // Modified content typewriter to preserve layout stability
+    function startContentTypewriter() {
+      stabilizeImage(); // Ensure image is stable before typing starts
+      const typingSequence = [
+        { id: 'goals-heading', speed: 80, content: 'Goals' },
+        { id: 'goals-text', speed: 10, content: 'As an aspiring consultant and researcher, I am passionate about using my expertise to support the well-being of performing artists. My focus is on helping professional musicians manage both mental and physical health challenges, especially the unique pressures that come with touring, through evidence-based strategies and interventions.' },
+        { id: 'education-heading', speed: 80, content: 'Education & Experience' },
+        { id: 'education-text', speed: 10, content: 'With my unique experience in the music industry, international background in Psychology and my own activity as a drummer and vocalist, I am here to help you enhance your performance while prioritising your health - for a sustainable and fulfilling career!' },
+        { id: 'final-text', speed: 15, content: 'Tune in for my weekly Twitch streams to gain valuable insights into musicians\' health!' }
+      ];
+      // Prepare containers first to minimize layout shifts
+      typingSequence.forEach(item => {
+        const element = document.getElementById(item.id);
+        if (element) {
+          element.innerHTML = '';
+          // Height will be restored with the 'visible' class
+        }
+      });
+      // Type each element in sequence
+      let currentIndex = 0;
+      function typeNextElement() {
+        stabilizeImage(); // Stabilize before each new element
+        if (currentIndex < typingSequence.length) {
+          const item = typingSequence[currentIndex];
+          const element = document.getElementById(item.id);
+          if (element) {
+            typeText(element, item.content, item.speed, function() {
+              currentIndex++;
+              typeNextElement();
+            });
+          } else {
+            currentIndex++;
+            typeNextElement();
+          }
+        }
+      }
+      // Start the typing process
+      typeNextElement();
+    }
+    // Set up a monitoring interval as a final safety net
+    const imageStabilityInterval = setInterval(stabilizeImage, 200);
+    // Clear the interval after 10 seconds when everything should be stable
+    setTimeout(() => clearInterval(imageStabilityInterval), 10000);
+  });
+</script>
