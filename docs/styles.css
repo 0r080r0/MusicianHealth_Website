@@ -1,0 +1,253 @@
+/* Styles for the video banner */
+
+/* Ensure the html and body cover the full viewport and allow scrolling */
+html, body {
+  height: 100%;
+  margin: 0;  /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styles for the video banner */
+.video-banner {
+  position: fixed;   /* Position the video fixed in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;  /* Fill the entire viewport height */
+  overflow: hidden; /* Prevent any scroll on the video itself */
+  z-index: -1;  /* Place video behind content */
+}
+
+.video-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Make sure video covers the background area */
+}
+
+/* The content inside the banner (on top of the video) */
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;  /* Ensures the content appears above the video */
+}
+
+.banner-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 1.5em;
+}
+
+/* Styles for the audio toggle button */
+.audio-toggle-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 2;  /* Make sure button is above the content */
+}
+
+.audio-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Allow the rest of the page to scroll */
+.content {
+  position: relative;
+  z-index: 0;
+  padding-top: 100vh; /* Offset content below the video */
+}
+
+
+
+
+
+/* CSS for the Slider */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;  /* Each slide takes up 100% of the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);  /* Light gray background for debugging */
+}
+
+.slide img {
+  width: 100%;  /* Image fits the slide width */
+  height: auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+
+/* Image Descriptions for Gallery */
+
+.image-container {
+  position: relative;
+  display: inline-block; /* Ensures the container only takes the size of the image */
+}
+
+.image {
+  width: 100%; /* Ensures image fills container */
+  height: auto;
+}
+
+.image-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  max-width: 60%;
+  z-index: 5;
+  border-top-right-radius: 3px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.slide.active .image-description {
+  opacity: 1;
+}
+
+
+
+
+/* Fade-in effects for the Media Webpage's EP Descriptions
+
+/* Fade-in effect for the first paragraph */
+.fade-in-text-1 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-text-1.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade-in effect for the second paragraph */
+.fade-in-text-2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-text-2.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* Webpage "Performance Experience": Fade In Effects for Bullet-Point Sections */
+
+body {
+  color: white; /* Keep the text color white */
+/*  font-family: Arial, sans-serif; /* Optional: Set a font */
+}
+
+/* Initially, the block will be invisible and below its final position */
+.fade-in-block {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Additional styling for your list */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 16px; /* Optional: Customize text size */
+}
+
+
+
+/* No visual shifts when loading webpages */
+
+/* Ensure full viewport coverage without breaking animations */
+html, body {
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+  margin: 0;  /* Remove default margins */
+  padding: 0;  /* Remove default padding */
+  height: auto;  /* Allow height to be dynamic based on content */
+  font-size: 16px;  /* Default font size for the body */
+  line-height: 1.5;  /* Adjust line-height if needed */
+}
+
+/* Optional: Ensure a specific minimum height for the body */
+body {
+  min-height: 100vh;  /* Ensures the page covers the full viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* font-family: Arial, sans-serif; ...Make sure you define the font family if needed */
+}
