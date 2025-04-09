@@ -132,12 +132,6 @@ html {
 
 <div class="video-banner">
 <p><!-- Video background with autoplay, loop, and initial muted state --> <video id="banner-video" autoplay="" loop="" muted="" class="video-banner-bg"> <source src="videos/your-video.mp4" type="video/mp4"> Your browser does not support the video tag. </video></p>
-<p><!-- Banner Content
-  <div class="banner-content">
-    <h1>Welcome fellow musicians!</h1>
-    <p> Add short content.</p>
-  </div>
-  --></p>
 <p><!-- Audio Toggle Button --> <button id="audio-toggle-btn" class="audio-toggle-btn">Unmute Audio</button></p>
 </div>
 <!-- Link to external CSS file -->
@@ -147,7 +141,7 @@ html {
   // Get the video element and the toggle button
   const video = document.getElementById('banner-video');
   const toggleButton = document.getElementById('audio-toggle-btn');
-  
+    
   // Toggle the video mute state when the button is clicked
   toggleButton.addEventListener('click', function() {
     if (video.muted) {
@@ -159,6 +153,24 @@ html {
     }
   });
 </script>
+<!-- Store original text content in hidden elements -->
+<div id="original-content" style="display:none">
+<div id="original-goals-heading">
+Goals
+</div>
+<div id="original-goals-text">
+As an aspiring consultant and researcher, I am passionate about using my expertise to support the well-being of performing artists. My focus is on helping professional musicians manage both mental and physical health challenges, especially the unique pressures that come with touring, through evidence-based strategies and interventions.
+</div>
+<div id="original-education-heading">
+Education &amp; Experience
+</div>
+<div id="original-education-text">
+With my unique experience in the music industry, international background in Psychological Science and my own activity as a drummer and vocalist, I will help you to enhance your performance while prioritising your health - for a sustainable and fulfilling career!
+</div>
+<div id="original-final-text">
+Tune in for my weekly Twitch streams to gain valuable insights into musicians’ health!
+</div>
+</div>
 <!-- Add IDs to text elements for typewriter effect -->
 <div class="quarto-about-broadside column-page">
   <div class="about-main">
@@ -171,73 +183,90 @@ html {
   </div>
 </header><div id="me">
 <h2 id="goals-heading">
-Goals
 </h2>
+<div id="goals-text-container" class="text-container">
 <p id="goals-text">
-As an aspiring consultant and researcher, I am passionate about using my expertise to support the well-being of performing artists. My focus is on helping professional musicians manage both mental and physical health challenges, especially the unique pressures that come with touring, through evidence-based strategies and interventions.
 </p>
+</div>
 <h2 id="education-heading">
-Education &amp; Experience
 </h2>
+<div id="education-text-container" class="text-container">
 <p id="education-text">
-With my unique experience in the music industry, international background in Psychological Science and my own activity as a drummer and vocalist, I will help you to enhance your performance while prioritising your health - for a sustainable and fulfilling career!
 </p>
+</div>
 </div></div>
   </div>
 </div>
 
-<p><span id="final-text">Tune in for my weekly Twitch streams to gain valuable insights into musicians’ health!</span></p>
+<p><span id="final-text"></span></p>
 <style>
-  /* Complete isolation of the profile image from any animations or reflows */
-  .about-image, 
-  .quarto-about-image,
-  #me .quarto-about-image,
-  .quarto-title-meta-heading img,
-  img[src="img/profile.jpeg"],
-  .broadside img[src="img/profile.jpeg"] {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: block !important;
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    /* Force GPU acceleration and isolate rendering layer */
-    will-change: transform;
-    transform: translateZ(0);
-    /* Prevent layout shifts from affecting image */
-    position: relative;
-    z-index: 100;
+  /* Base styles */
+  body {
+    color: white;
+    overflow-x: hidden;
   }
   
-  /* Prevent reflow impact by ensuring text elements don't cause container shifts */
+  /* 
+   * The absolute positioned overlay image that will never be affected by layout changes 
+   */
+  #absolute-image-overlay {
+    position: fixed;
+    display: none;
+    z-index: 1000;
+    pointer-events: none; /* So it doesn't interfere with clicking */
+  }
+  
+  /* 
+   * Create an invisible placeholder where the original image would be,
+   * to maintain layout structure but allow our fixed overlay image to show
+   */
+  body.overlay-active .about-image img,
+  body.overlay-active .quarto-about-image img {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  /* Ensure text containers have minimum heights to prevent sudden layout shifts */
+  .text-container {
+    position: relative;
+    overflow: visible;
+    min-height: 150px; /* Adjust based on content */
+  }
+  
+  /* Text element base state */
   #me h2, #me p, #final-text {
     opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: height 0s, opacity 0s;
+    visibility: hidden;
   }
   
-  /* When text elements become visible, restore their height smoothly */
+  /* When text elements become visible */
   #me h2.visible, #me p.visible, #final-text.visible {
     opacity: 1;
-    height: auto;
-    overflow: visible;
+    visibility: visible;
   }
   
-  /* Preserve container heights during typewriter effect */
-  #me {
-    min-height: 200px; /* Adjust based on your content */
+  /* Fixed heights for text elements */
+  #goals-heading, #education-heading {
+    min-height: 30px;
+    margin-top: 1rem;
   }
   
-  body { /* Target the body for default white text */
-    color: white;
+  #goals-text, #education-text {
+    min-height: 120px;
   }
   
-  /* Page title (from YAML frontmatter) styles */
-  /* This targets the h1 that Quarto automatically creates from the YAML title */
+  /* Final text positioning - moved closer to image */
+  #final-text {
+    display: block;
+    min-height: 24px;
+    margin-top: -1rem; /* Negative margin to move it up closer to image */
+    position: relative; /* Enable positioning context */
+    z-index: 10; /* Ensure it's above other elements */
+  }
+  
+  /* Page title styles */
   h1.title {
     opacity: 0; /* Start invisible for typewriter effect */
-    border-right: 0.15em solid transparent; /* Prepare for cursor effect */
   }
   
   /* Cursor effect for elements being typed */
@@ -251,160 +280,170 @@ With my unique experience in the music industry, international background in Psy
     50% { border-color: white; }
   }
   
-  /* Ensure broadside template layout is preserved */
+  /* Ensure broadside template doesn't collapse */
   .broadside {
-    display: flex;
-    flex-wrap: wrap;
+    min-height: 600px;
   }
   
-  /* Ensure no duplicate images are shown */
-  .broadside img:not([src="img/profile.jpeg"]) {
-    display: none !important;
+  /* Keep minimum height for the image column */
+  .about-entity, .quarto-about {
+    min-height: 500px;
   }
 </style>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // First, force image to be visible and stable before anything else happens
-    function stabilizeImage() {
-      // Comprehensive targeting of all potential image elements
-      const imageSelectors = [
-        'img[src="img/profile.jpeg"]',
-        '.about-image img',
-        '.quarto-about-image img',
-        '.broadside img'
-      ];
-      imageSelectors.forEach(selector => {
-        const images = document.querySelectorAll(selector);
-        images.forEach(img => {
-          // Clone and replace the image to remove any bound effects
-          const parent = img.parentNode;
-          const clone = img.cloneNode(true);
-          // Apply critical styles to the clone
-          clone.style.cssText = `
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: block !important;
-            animation: none !important;
-            transition: none !important;
-            transform: none !important;
-            position: relative;
-            z-index: 100;
-          `;
-          // Replace the original with the clone
-          if (parent) {
-            parent.replaceChild(clone, img);
-            // Also stabilize the parent container
-            parent.style.cssText += `
-              opacity: 1 !important;
-              visibility: visible !important;
-              display: block !important;
-              animation: none !important;
-              transition: none !important;
-            `;
-          }
-        });
-      });
-      // Also target any container with ID "me"
-      const meContainer = document.getElementById('me');
-      if (meContainer) {
-        const meImages = meContainer.querySelectorAll('img');
-        meImages.forEach(img => {
-          img.style.cssText = `
-            opacity: 1 !important;
-            visibility: visible !important;
-            display: block !important;
-            animation: none !important;
-            transition: none !important;
-          `;
-        });
+    // Create an absolute positioned image overlay 
+    function createImageOverlay() {
+      // First find the original template image
+      const originalImage = document.querySelector('.about-image img, .quarto-about-image img');
+      if (!originalImage) {
+        console.error("Could not find template image");
+        return false;
       }
+
+      // Create our overlay image element
+      const overlay = document.createElement('img');
+      overlay.id = 'absolute-image-overlay';
+      overlay.src = originalImage.src;
+      overlay.alt = originalImage.alt || "Profile Image";
+      document.body.appendChild(overlay);
+      
+      // Position the overlay exactly where the original image is
+      const rect = originalImage.getBoundingClientRect();
+      overlay.style.top = (window.scrollY + rect.top) + 'px';
+      overlay.style.left = (window.scrollX + rect.left) + 'px';
+      overlay.style.width = rect.width + 'px';
+      overlay.style.height = rect.height + 'px';
+      overlay.style.display = 'block';
+      
+      // Hide the original image
+      document.body.classList.add('overlay-active');
+      
+      return true;
     }
-    // Run immediately and after a short delay to catch template rendering
-    stabilizeImage();
-    setTimeout(stabilizeImage, 50);
-    // Modify the typewriter effect to add a class instead of changing innerHTML directly
-    function typeText(element, text, speed, callback) {
-      element.classList.add('typing');
-      element.classList.add('visible'); // Make element visible but preserve height
-      let displayText = '';
-      let index = 0
+    
+    // Function to handle typewriter effect
+    function typewriter(targetId, content, speed, callback) {
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) {
+        if (callback) callback();
+        return;
+      }
+      
+      // Make element visible but initially empty
+      targetElement.textContent = '';
+      targetElement.classList.add('typing');
+      targetElement.classList.add('visible');
+      
+      let index = 0;
+      
       function type() {
-        if (index < text.length) {
-          displayText += text.charAt(index);
-          element.innerHTML = displayText;
+        if (index < content.length) {
+          // Update content
+          targetElement.textContent = content.substring(0, index + 1);
           index++;
+          
+          // Schedule next character
           setTimeout(type, speed);
-          // Re-stabilize the image periodically
-          if (index % 5 === 0) stabilizeImage();
         } else {
-          element.classList.remove('typing');
-          if (callback) setTimeout(callback, 200);
-          stabilizeImage(); // Re-stabilize after typing is complete
+          // Finished typing
+          targetElement.classList.remove('typing');
+          
+          if (callback) {
+            setTimeout(callback, 100);
+          }
         }
       }
+      
+      // Start the typing process
       type();
     }
-    // Find the main title from the YAML frontmatter (Quarto generates this)
-    const mainTitle = document.querySelector('h1.title');
-    if (mainTitle) {
-      // Store original content and clear it for typewriter effect
-      const titleContent = mainTitle.textContent;
-      mainTitle.textContent = '';
-      mainTitle.style.opacity = '1';
-      // Apply typewriter effect to the page title first
-      typeText(mainTitle, titleContent, 100, function() {
-        // Call stabilizeImage once more before continuing
-        stabilizeImage();
+    
+    // Main function to start typewriter sequence
+    function startTypewriterSequence() {
+      // Type the main title first
+      const mainTitle = document.querySelector('h1.title');
+      if (mainTitle) {
+        const titleContent = mainTitle.textContent || 'Welcome fellow musicians!';
+        mainTitle.textContent = '';
+        mainTitle.style.opacity = '1';
+        
+        // Apply typewriter to title
+        typewriter('title', titleContent, 80, function() {
+          startContentTypewriter();
+        });
+      } else {
         startContentTypewriter();
-      });
-    } else {
-      // If title can't be found, proceed with content typewriter
-      startContentTypewriter();
+      }
     }
-    // Modified content typewriter to preserve layout stability
+    
+    // Function to type the main content in sequence
     function startContentTypewriter() {
-      stabilizeImage(); // Ensure image is stable before typing starts
+      // Get content from hidden elements
       const typingSequence = [
-        { id: 'goals-heading', speed: 80, content: 'Goals' },
-        { id: 'goals-text', speed: 10, content: 'As an aspiring consultant and researcher, I am passionate about using my expertise to support the well-being of performing artists. My focus is on helping professional musicians manage both mental and physical health challenges, especially the unique pressures that come with touring, through evidence-based strategies and interventions.' },
-        { id: 'education-heading', speed: 80, content: 'Education & Experience' },
-        { id: 'education-text', speed: 10, content: 'With my unique experience in the music industry, international background in Psychology and my own activity as a drummer and vocalist, I am here to help you enhance your performance while prioritising your health - for a sustainable and fulfilling career!' },
-        { id: 'final-text', speed: 15, content: 'Tune in for my weekly Twitch streams to gain valuable insights into musicians\' health!' }
-      ];
-      // Prepare containers first to minimize layout shifts
-      typingSequence.forEach(item => {
-        const element = document.getElementById(item.id);
-        if (element) {
-          element.innerHTML = '';
-          // Height will be restored with the 'visible' class
+        {
+          targetId: 'goals-heading',
+          speed: 80,
+          content: document.getElementById('original-goals-heading').textContent
+        },
+        {
+          targetId: 'goals-text',
+          speed: 10,
+          content: document.getElementById('original-goals-text').textContent
+        },
+        {
+          targetId: 'education-heading',
+          speed: 80,
+          content: document.getElementById('original-education-heading').textContent
+        },
+        {
+          targetId: 'education-text',
+          speed: 10,
+          content: document.getElementById('original-education-text').textContent
+        },
+        {
+          targetId: 'final-text',
+          speed: 15,
+          content: document.getElementById('original-final-text').textContent
         }
-      });
+      ];
+      
       // Type each element in sequence
       let currentIndex = 0;
       function typeNextElement() {
-        stabilizeImage(); // Stabilize before each new element
         if (currentIndex < typingSequence.length) {
           const item = typingSequence[currentIndex];
-          const element = document.getElementById(item.id);
-          if (element) {
-            typeText(element, item.content, item.speed, function() {
-              currentIndex++;
-              typeNextElement();
-            });
-          } else {
+          
+          typewriter(item.targetId, item.content, item.speed, function() {
             currentIndex++;
-            typeNextElement();
-          }
+            
+            // Small delay between elements
+            setTimeout(typeNextElement, 200);
+          });
         }
       }
-      // Start the typing process
+      
+      // Start the typing sequence
       typeNextElement();
     }
-    // Set up a monitoring interval as a final safety net
-    const imageStabilityInterval = setInterval(stabilizeImage, 200);
-    // Clear the interval after 10 seconds when everything should be stable
-    setTimeout(() => clearInterval(imageStabilityInterval), 10000);
+    
+    // Initialization function
+    function initialize() {
+      // First create our image overlay
+      if (createImageOverlay()) {
+        // Give a moment for layout to stabilize
+        setTimeout(function() {
+          // Then start the typewriter sequence
+          startTypewriterSequence();
+        }, 500);
+      } else {
+        // If overlay creation failed, just start typewriter
+        startTypewriterSequence();
+      }
+    }
+    
+    // Add window load event to ensure all images are loaded first
+    window.addEventListener('load', initialize);
   });
 </script>
 
