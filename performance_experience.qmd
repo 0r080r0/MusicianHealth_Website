@@ -6,7 +6,7 @@ title: "Performance Experience"
   body { /* Target the body for default white text */
     color: white;
   }
-  .title { /* Add this new style to center the title */
+  .title { /* Center the title */
     text-align: center;
   }
 </style>
@@ -51,17 +51,17 @@ title: "Performance Experience"
   top: 50%;
   transform: translateY(-50%);
   width: auto;
-  padding: 20px 30px; /* Increased padding */
-  margin-top: -30px; /* Adjusted margin */
+  padding: 20px 30px;
+  margin-top: -30px;
   color: white;
   font-weight: bold;
-  font-size: 24px; /* Increased font size */
+  font-size: 24px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(0,0,0,0.5);
   z-index: 10;
-  text-decoration: none; /* Removed underline */
+  text-decoration: none;
 }
 
 .next {
@@ -181,7 +181,7 @@ showSlides(slideIndex);
 <style>
 .fade-in-element {
   opacity: 0;
-  transition: opacity 0.8s ease-in-out; /* Adjust duration as needed */
+  transition: opacity 0.8s ease-in-out; /* Adjusts duration for fade-in effect */
 }
 
 .fade-in-element.visible {
