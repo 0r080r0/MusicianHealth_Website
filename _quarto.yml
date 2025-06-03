@@ -32,7 +32,7 @@ static-assets:
   - "audio/"
   - "videos/"
 
-# Adding a media section to your site configuration
+# Adding a media section to site configuration
 audio_files:
   - "audio/Flumine.wav"
   - "audio/ICD.wav"
@@ -45,7 +45,7 @@ audio_files:
 format:
   html:
     theme: solar
-    css: styles.css      # Custom CSS for the page (make sure this file is in the project folder)
+    css: styles.css      # Custom CSS for the page
     include-in-header:
       - text: |
           <style>
@@ -54,5 +54,5 @@ format:
             overflow-y: scroll; /* Always show scrollbar */
           }
           </style>
-    toc: true             # Table of contents, optional
-editor: source           # Set the editor to source mode (optional)
+    toc: true             # Table of contents
+editor: source           # Set the editor to source mode
