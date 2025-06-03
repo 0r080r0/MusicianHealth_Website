@@ -6,10 +6,10 @@ about:
     image: img/profile.jpeg
 output:
     html:
-        theme: solar       # Solar theme
-        css: styles.css    # Link to your custom CSS
-        toc: true           # Optional: Adds a table of contents
-editor: source         # Use source editor mode (optional)
+        theme: solar       
+        css: styles.css    # Link to custom CSS
+        toc: true           # Adds a table of contents
+editor: source
 ---
 
 <div class="video-banner">
@@ -76,18 +76,18 @@ editor: source         # Use source editor mode (optional)
   }
   
   /* 
-   * The absolute positioned overlay image that will never be affected by layout changes 
+   * absolute positioned overlay image that will never be affected by layout changes 
    */
   #absolute-image-overlay {
     position: fixed;
     display: none;
     z-index: 1000;
-    pointer-events: none; /* So it doesn't interfere with clicking */
+    pointer-events: none;
   }
   
   /* 
-   * Create an invisible placeholder where the original image would be,
-   * to maintain layout structure but allow our fixed overlay image to show
+   * Create an invisible placeholder where the original image would be
+   * to maintain layout structure but allow fixed overlay image to show
    */
   body.overlay-active .about-image img,
   body.overlay-active .quarto-about-image img {
@@ -124,13 +124,13 @@ editor: source         # Use source editor mode (optional)
     min-height: 120px;
   }
   
-  /* Final text positioning - moved closer to image */
+  /* Final text positioning */
   #final-text {
     display: block;
     min-height: 24px;
     margin-top: -1rem; /* Negative margin to move it up closer to image */
     position: relative; /* Enable positioning context */
-    z-index: 10; /* Ensure it's above other elements */
+    z-index: 10;
   }
   
   /* Page title styles */
@@ -171,14 +171,14 @@ editor: source         # Use source editor mode (optional)
         return false;
       }
 
-      // Create our overlay image element
+      // Create overlay image element
       const overlay = document.createElement('img');
       overlay.id = 'absolute-image-overlay';
       overlay.src = originalImage.src;
       overlay.alt = originalImage.alt || "Profile Image";
       document.body.appendChild(overlay);
       
-      // Position the overlay exactly where the original image is
+      // Position overlay exactly where original image is
       const rect = originalImage.getBoundingClientRect();
       overlay.style.top = (window.scrollY + rect.top) + 'px';
       overlay.style.left = (window.scrollX + rect.left) + 'px';
@@ -186,7 +186,7 @@ editor: source         # Use source editor mode (optional)
       overlay.style.height = rect.height + 'px';
       overlay.style.display = 'block';
       
-      // Hide the original image
+      // Hide original image
       document.body.classList.add('overlay-active');
       
       return true;
