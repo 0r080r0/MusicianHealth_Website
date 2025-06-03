@@ -2,7 +2,7 @@
 title: "Publications"
 format: html
 ---
-<!-- Particles.js CDN -->
+<!-- Particles.js CDN for particles animation background -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <style>
   /* Set the body and html to cover the full screen */
@@ -21,24 +21,24 @@ format: html
     width: 100%; /* Full width of the screen */
     z-index: 1; /* Ensure particles stay behind the header content */
   }
-  /* Main title styles - taken from the document title */
+  /* Main title styles */
   h1 {
     position: absolute;
     z-index: 2; /* Ensure title stays on top of particles */
     font-size: 35px; /* Smaller font size for the title */
-    top: 0px; /* Move the title a bit closer to the upper limit of the page */
+    top: 0px; /* Move the title closer to the upper page limit */
     left: 50%;
     transform: translateX(-50%); /* Center the title horizontally */
     color: white; /* Ensure the title is visible */
   }
-  /* Content below the header - adjusted position */
+  /* Content below the header */
   .content {
     padding-top: 60px;
     text-align: left; /* Left align the content */
     font-size: 18px;
     margin-left: 0px;
   }
-  /* Styling for the heading - normal weight */
+  /* Styling for the heading */
   .heading-style {
     font-size: 30px;
     font-weight: normal;
@@ -54,7 +54,7 @@ format: html
 </div>
 <!-- Main content -->
 <div class="content">
-  <!-- Research Articles title - Using H2 tag to leverage Quarto's default heading styling -->
+  <!-- Research Articles title - using H2 tag to leverage Quarto's default heading styling -->
   <h3 class="heading-style" style="font-weight: 600;">Research Articles</h3>
   <br>
   
