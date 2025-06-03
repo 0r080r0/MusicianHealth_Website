@@ -14,22 +14,22 @@ format: html
   }
   /* Container for the header and particles */
   #particles-header {
-    position: fixed; /* Fixed at the top */
-    top: 0; /* Place it at the very top of the page */
+    position: fixed;
+    top: 0;
     left: 0;
     height: 100px; /* Height of the header (particles height) */
-    width: 100%; /* Full width of the screen */
+    width: 100%;
     z-index: 1; /* Ensure particles stay behind the header content */
   }
   /* Main title styles */
   h1 {
     position: absolute;
     z-index: 2; /* Ensure title stays on top of particles */
-    font-size: 35px; /* Smaller font size for the title */
-    top: 0px; /* Move the title closer to the upper page limit */
+    font-size: 35px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%); /* Center the title horizontally */
-    color: white; /* Ensure the title is visible */
+    color: white;
   }
   /* Content below the header */
   .content {
