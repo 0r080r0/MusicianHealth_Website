@@ -6,7 +6,7 @@ title: "Music Industry Experience" # "Backstage or Professional Experience"
   body { /* Target the body for default white text */
     color: white;
   }
-  .title { /* Add this new style to center the title */
+  .title { /* Center the title */
     text-align: center;
   }
 </style>
