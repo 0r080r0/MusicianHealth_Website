@@ -43,7 +43,8 @@ audio_files:
   - "audio/Shadow.wav"
   - "audio/ShadowOfTheSunAcoustic.wav"
   - "audio/CT.wav"
-  - "audio/abduct.wav"
+  - "audio/abduct.m4a"
+  - "audio/Seek&Hide.wav"
 
 format:
   html:

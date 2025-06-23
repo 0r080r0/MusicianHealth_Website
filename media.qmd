@@ -233,7 +233,7 @@ format: html
     </table>
     <p> **Genre**: Psychedelic Rock / Classic Rock <br>
         **Instrument**: Drums & Vocals <br>
-        **Release Date**: 22nd of May 2021 <br>
+        **Release Date**: 3rd of May 2022 <br>
         **Location**: Groningen, The Netherlands </p>
 
 <div class="fade-in-text-3"> *"Psychedelic Journey marks Astralite's debut EP, offering listeners a transcendent sonic experience that blends atmospheric textures with hypnotic rhythms. Each track serves as a portal to different states of consciousness, with the attempt to translate inner experiences into sound. From the ethereal opening notes of "Intro" to the acoustic-driven finale "Shadow Of The Sun," this EP represents a seamless fusion of electronic production techniques with organic soundscapes. Each track is a different facet of the same journey — moving from curiosity to darkness, through complexity, and finally arriving at a place of acoustic simplicity."*</div>
