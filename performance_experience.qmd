@@ -91,7 +91,7 @@ title: "Performance Experience"
 .image-indicators {
  display: flex;
  justify-content: center;
- margin-top: 5px;
+ margin-top: -15px;
 }
 
 .image-indicators img {

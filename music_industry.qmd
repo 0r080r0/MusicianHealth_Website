@@ -15,7 +15,7 @@ title: "Music Industry Experience" # "Backstage or Professional Experience"
 
 <div class="job-entry" style="display: flex;">  <div class="job-image" style="width: 40%;">  <img src="img/believe.jpeg" alt="Believe Digital" style="width: 95%;"> </div>
   <div class="job-text fade-in" style="flex: 1; margin-left: 20px;"> <strong style="color: #9A670E;">
-      Streaming & Editorial Streaming Marketing Partnerships | Believe Digital | Working Student | Part-Time | Remote | Hamburg | DE | 2022-2023
+      International Music Marketing | Believe Digital | Working Student | Part-Time | Remote | Hamburg | DE | 2022-2023
     </strong>
     <br><br>
     Key assistant in international music trade marketing, specialising in the promotion of rock and metal musicians. Played a pivotal role in artist visibility and audience engagement by leveraging data-driven insights and innovative marketing techniques tailored to the genre. Collaborated effectively with artists, labels, and DSPs to support promotional and distribution efforts.

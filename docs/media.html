@@ -26,10 +26,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,12 +36,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -80,7 +70,6 @@ html {
     <span class="navbar-title">Evangelia Karakoliou</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -108,7 +97,7 @@ html {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./streaming.html" rel="" target="">
- <span class="menu-text">Streaming</span></a>
+ <span class="menu-text">Twitch Channel</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto tools-wide">
@@ -175,6 +164,119 @@ html {
 <div class="fade-in-text-1">
 <p><em>“Flumine stands for river - a flow of change, dynamic sound waves and subtle rippling effects that ring in the ears and permeate the skin. Flumine’s songs are about authenticity, depth and real experiences, captured by abstract, poetic lyrics. At times rather emotional and reflective, other times more aggressive and energetic. Flumine’s music lets you devle into another atmosphere to immerse with the music and connect to your inner self. Music themes range from humanism, to equality and awareness.”</em></p>
 </div>
+<hr>
+<hr>
+
+
+<style>
+        /* Ultra-thin track bars (1/3 of standard thickness) with black color */
+        audio::-webkit-media-controls-timeline {
+            height: 1px !important;
+            color: black !important;
+            background-color: black !important;
+            padding: 0 !important; /* Remove any default padding */
+        }
+        audio::-webkit-media-controls-time-rail {
+            color: black !important;
+            background-color: black !important;
+            padding: 0 !important; /* Remove any default padding */
+            margin: 0 !important; /* Remove any default margin */
+        }
+        audio::-webkit-slider-thumb {
+            background: black !important;
+        }
+        audio::-moz-range-track {
+            height: 1px !important;
+            background: black !important;
+        }
+        audio::-moz-range-progress { /* Style the played portion in Firefox */
+            background-color: black !important;
+        }
+        audio::-ms-track {
+            height: 1px !important;
+            background: black !important;
+            color: transparent !important; /* Hide default track color */
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        audio::-ms-fill-lower { /* Played portion in IE/Edge */
+            background-color: black !important;
+        }
+        audio::-ms-fill-upper { /* Unplayed portion in IE/Edge */
+            background-color: black !important;
+        }
+        /* Dark styling for audio players */
+        audio {
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 5px;
+            height: 15px;
+            width: 80%;
+            margin-bottom: 5px;
+            /* padding: 2px 0 !important; Removed this line */
+        }
+        /* Hide download button in audio controls */
+        audio::-webkit-media-controls-download-button {
+            display: none !important;
+        }
+        audio::-webkit-media-controls-enclosure {
+            overflow: hidden !important;
+        }
+        /* Dark mode styles for audio controls */
+        .dark-audio::-webkit-media-controls-panel {
+            background-color: #333;  /* Dark background */
+            color: #fff;  /* White text */
+        }
+        .dark-audio::-webkit-media-controls-play-button {
+            background-color: #444;  /* Dark play button */
+            border: none;  /* Remove button border */
+        }
+        .dark-audio::-webkit-media-controls-volume-slider {
+            background-color: #444;  /* Dark volume slider */
+        }
+        .dark-audio::-webkit-media-controls-mute-button {
+            background-color: #444;  /* Dark mute button */
+        }
+        body { /* Target the body for default white text */
+            color: white;
+        }
+        .title { /* Add this new style to center the title */
+            text-align: center;
+        }
+    </style>
+
+
+<p>
+<strong style="color: #9A670E;"><strong>“EP: Astralite - Psychedelic Journey”</strong></strong>
+</p>
+
+<table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
+<tbody><tr>
+<td style="width:25%; vertical-align:top; padding-right:20px;">
+<img src="img/sky.jpeg" alt="Album Cover" style="width:65%; border-radius:5px;">
+</td>
+<td style="width:60%; vertical-align:top;">
+<p style="font-size: 14px; margin-bottom:5px;">
+Demo Track 1: Intro (Instrumental)
+</p>
+<audio controls="" preload="metadata" src="audio/Intro.wav" controlslist="nodownload">
+</audio>
+<p style="font-size: 14px; margin-bottom:5px;">
+Demo Track 2: Dark (Instrumental)
+</p>
+<audio controls="" preload="metadata" src="audio/Dark.wav" controlslist="nodownload">
+</audio>
+</td>
+</tr>
+
+</tbody></table>
+<p>
+<strong>Genre</strong>: Post-Rock/Post-Punk/Grunge <br> <strong>Instrument</strong>: Drums <br> <strong>Release Date</strong>: ___2021 <br> <strong>Location</strong>: Groningen, The Netherlands
+</p>
+<div class="fade-in-text-2">
+<p>*“Drowning Echo…___.”*</p>
+</div>
+
+
 <hr>
 
 

@@ -29,6 +29,113 @@ format: html
 
 ---
 
+---
+
+<html>
+<head>
+    <style>
+        /* Ultra-thin track bars (1/3 of standard thickness) with black color */
+        audio::-webkit-media-controls-timeline {
+            height: 1px !important;
+            color: black !important;
+            background-color: black !important;
+            padding: 0 !important; /* Remove any default padding */
+        }
+        audio::-webkit-media-controls-time-rail {
+            color: black !important;
+            background-color: black !important;
+            padding: 0 !important; /* Remove any default padding */
+            margin: 0 !important; /* Remove any default margin */
+        }
+        audio::-webkit-slider-thumb {
+            background: black !important;
+        }
+        audio::-moz-range-track {
+            height: 1px !important;
+            background: black !important;
+        }
+        audio::-moz-range-progress { /* Style the played portion in Firefox */
+            background-color: black !important;
+        }
+        audio::-ms-track {
+            height: 1px !important;
+            background: black !important;
+            color: transparent !important; /* Hide default track color */
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        audio::-ms-fill-lower { /* Played portion in IE/Edge */
+            background-color: black !important;
+        }
+        audio::-ms-fill-upper { /* Unplayed portion in IE/Edge */
+            background-color: black !important;
+        }
+        /* Dark styling for audio players */
+        audio {
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 5px;
+            height: 15px;
+            width: 80%;
+            margin-bottom: 5px;
+            /* padding: 2px 0 !important; Removed this line */
+        }
+        /* Hide download button in audio controls */
+        audio::-webkit-media-controls-download-button {
+            display: none !important;
+        }
+        audio::-webkit-media-controls-enclosure {
+            overflow: hidden !important;
+        }
+        /* Dark mode styles for audio controls */
+        .dark-audio::-webkit-media-controls-panel {
+            background-color: #333;  /* Dark background */
+            color: #fff;  /* White text */
+        }
+        .dark-audio::-webkit-media-controls-play-button {
+            background-color: #444;  /* Dark play button */
+            border: none;  /* Remove button border */
+        }
+        .dark-audio::-webkit-media-controls-volume-slider {
+            background-color: #444;  /* Dark volume slider */
+        }
+        .dark-audio::-webkit-media-controls-mute-button {
+            background-color: #444;  /* Dark mute button */
+        }
+        body { /* Target the body for default white text */
+            color: white;
+        }
+        .title { /* Add this new style to center the title */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p><strong style="color: #9A670E;">**"EP: Astralite - Psychedelic Journey"**</strong></p>
+    <table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
+        <tr>
+            <td style="width:25%; vertical-align:top; padding-right:20px;">
+                <img src="img/sky.jpeg" alt="Album Cover" style="width:65%; border-radius:5px;">
+            </td>
+            <td style="width:60%; vertical-align:top;">
+                <p style="font-size: 14px; margin-bottom:5px;">Demo Track 1: Intro (Instrumental)</p>
+                <audio controls preload="metadata" src="audio/Intro.wav" controlsList="nodownload"></audio>
+                <p style="font-size: 14px; margin-bottom:5px;">Demo Track 2: Dark (Instrumental)</p>
+                <audio controls preload="metadata" src="audio/Dark.wav" controlsList="nodownload"></audio>
+            </td>
+        </tr>
+    </table>
+    <p> **Genre**: Post-Rock/Post-Punk/Grunge <br>
+        **Instrument**: Drums <br>
+        **Release Date**: ___2021 <br>
+        **Location**: Groningen, The Netherlands </p>
+<div class="fade-in-text-2"> 
+*"Drowning Echo...___."*
+</div>
+</body>
+</html>
+
+---
+
 <html>
 <head>
     <style>

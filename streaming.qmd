@@ -1,10 +1,24 @@
 ---
-title: "Streaming"
 format: html
 ---
 
+<style>
+  h1 {
+    position: absolute;
+    z-index: 2;
+    font-size: 35px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    margin: 0;
+  }
+  h2 {
+    margin-top: 80px;  /* Add this to push the "Twitch Channel" header down */
+  }
+</style>
+
+<h1>Streaming</h1>
+
 ## Twitch Channel
-
 <strong style="color: #9A670E;">Soon to come: A weekly live stream about Musicians' Health - stay tuned!</strong>
-
-
