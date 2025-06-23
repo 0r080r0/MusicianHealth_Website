@@ -24,7 +24,7 @@ website:
         href: "mailto:hakaiosan@gmail.com"
   page-footer:
     right: "Built with R and [Quarto](https://quarto.org/)"
-    left: "Copyright &copy; 2024 by Evangelia Karakoliou - Musician & Researcher"
+    left: "Copyright &copy; 2024-2025 by Evangelia Karakoliou - Musician & Researcher"
 
 # Define static assets (audio files, images & videos)
 static-assets:
