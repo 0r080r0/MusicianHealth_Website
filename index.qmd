@@ -49,7 +49,7 @@ editor: source
   <div id="original-goals-heading">Goals</div>
   <div id="original-goals-text">As an aspiring consultant and researcher, I am passionate about using my expertise to support the well-being of performing artists. My focus is on helping professional musicians manage both mental and physical health challenges, especially the unique pressures that come with touring, through evidence-based strategies and interventions.</div>
   <div id="original-education-heading">Education & Experience</div>
-  <div id="original-education-text">With my unique experience in the music industry, international background in Psychological Science and my own activity as a drummer and vocalist, I focus on enhancing your performance while prioritising your health - for a sustainable and fulfilling career.</div>
+  <div id="original-education-text">With my unique experience in the music industry, international background in Psychological Science and my own activity as a drummer and vocalist, I focus on enhancing your performance while prioritising your health - for a sustainable and fulfilling music career.</div>
   <div id="original-final-text">Tune in for my weekly Twitch streams to gain valuable insights into Musicians' Health!</div>
 </div>
 
