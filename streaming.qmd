@@ -5,6 +5,6 @@ format: html
 
 ## Twitch Channel
 
-<strong style="color: #9A670E;">Soon to come: A weekly live stream about Musician's Health - stay tuned!</strong>
+<strong style="color: #9A670E;">Soon to come: A weekly live stream about Musicians' Health - stay tuned!</strong>
 
 
