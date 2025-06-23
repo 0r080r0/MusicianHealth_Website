@@ -20,8 +20,6 @@ website:
         href: https://github.com/0r080r0
       - icon: twitch
         href: https://twitch.com/
-      - icon: envelope
-        href: "mailto:hakaiosan@gmail.com"
   page-footer:
     right: "Built with R and [Quarto](https://quarto.org/)"
     left: "Copyright &copy; 2024 by Evangelia Karakoliou - Musician & Researcher"
