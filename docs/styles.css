@@ -178,25 +178,30 @@ html, body {
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade-in-text-1.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* Fade-in effect for the second paragraph */
 .fade-in-text-2 {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade-in-text-2.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-
+/* Fade-in effect for the third paragraph */
+.fade-in-text-3 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-text-3.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 /* Webpage "Performance Experience": Fade In Effects for Bullet-Point Sections */

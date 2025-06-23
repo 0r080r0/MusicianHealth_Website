@@ -42,6 +42,8 @@ audio_files:
   - "audio/Dark.wav"
   - "audio/Shadow.wav"
   - "audio/ShadowOfTheSunAcoustic.wav"
+  - "audio/CT.wav"
+  - "audio/abduct.wav"
 
 format:
   html:
