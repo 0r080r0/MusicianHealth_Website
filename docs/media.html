@@ -251,7 +251,7 @@ html {
 <table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
 <tbody><tr>
 <td style="width:25%; vertical-align:top; padding-right:20px;">
-<img src="img/DE_Simplon.jpg" alt="Album Cover" style="width:65%; border-radius:5px;">
+<img src="img/DE_Gro.png" alt="Album Cover" style="width:65%; border-radius:5px;">
 </td>
 <td style="width:60%; vertical-align:top;">
 <p style="font-size: 14px; margin-bottom:5px;">
@@ -413,12 +413,10 @@ Demo Track 4: Shadow Of The Sun (Acoustic)
         rect.bottom >= 0
       );
     }
-
     // Select all paragraphs with fade-in classes
     const fadeInText1 = document.querySelector('.fade-in-text-1');
     const fadeInText2 = document.querySelector('.fade-in-text-2');
     const fadeInText3 = document.querySelector('.fade-in-text-3');
-
     function checkFade() {
       if (fadeInText1 && isElementInViewport(fadeInText1)) {
         fadeInText1.classList.add('is-visible');
@@ -430,10 +428,20 @@ Demo Track 4: Shadow Of The Sun (Acoustic)
         fadeInText3.classList.add('is-visible');
       }
     }
-
     // Trigger the function on scroll and on initial load
     window.addEventListener('scroll', checkFade);
     checkFade();  // Check visibility on initial load
+    // FIX 1: Ensure only one audio player plays at a time
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audio => {
+      audio.addEventListener('play', function() {
+        audioElements.forEach(otherAudio => {
+          if (otherAudio !== this) {
+            otherAudio.pause();
+          }
+        });
+      });
+    });
   });
 </script>
 <hr>
@@ -472,26 +480,21 @@ Flight 1549 - I Need A Break | Vocals | “Rock in der Stadthalle” | Bad Schwa
 </section>
 <section id="concert-videos" class="level2">
 <h2 class="anchored" data-anchor-id="concert-videos">Concert Videos</h2>
-<!-- First video title -->
+<!-- Concert Videos with Fixed Google Drive Embeds -->
 <h3 style="font-size: 20px;" class="anchored">
 Flumine - Dis/Closure | Vocals | Concert at Roy Mölndal | Gothenburg | SE | 2023
 </h3>
-<!-- First video -->
-<iframe src="https://drive.google.com/file/d/1wPqJtaUivmxZX1ksPXKIqcSHGX7RsIWS/preview" width="800" height="450" allowfullscreen="">
+<iframe src="https://drive.google.com/file/d/1wPqJtaUivmxZX1ksPXKIqcSHGX7RsIWS/preview?rm=minimal" width="800" height="450" allow="autoplay" allowfullscreen="">
 </iframe>
-<!-- Second video title -->
 <h3 style="font-size: 20px;" class="anchored">
 Flumine - Flumine | Vocals | Concert at Ericsson | Gothenburg | SE | 2022
 </h3>
-<!-- Second video -->
-<iframe src="https://drive.google.com/file/d/1ckrUBpavzr2wORyS8hBmN-xLK88eVayd/preview" width="800" height="450" allowfullscreen="">
+<iframe src="https://drive.google.com/file/d/1ckrUBpavzr2wORyS8hBmN-xLK88eVayd/preview?rm=minimal" width="800" height="450" allow="autoplay" allowfullscreen="">
 </iframe>
-<!-- Third video title -->
 <h3 style="font-size: 20px;" class="anchored">
 Ioana Iorgu - Bad Dreams | Drums | Concert at Simplon | Groningen | NL | 2021
 </h3>
-<!-- Third video -->
-<iframe src="https://drive.google.com/file/d/1P1FdJ6S-VaNnX7q5s2sQ9bSQrRIbeSHZ/preview" width="800" height="450" allowfullscreen="">
+<iframe src="https://drive.google.com/file/d/1P1FdJ6S-VaNnX7q5s2sQ9bSQrRIbeSHZ/preview?rm=minimal" width="800" height="450" allow="autoplay" allowfullscreen="">
 </iframe>
 <!-- ![](videos/DisClosure.mp4){width=900} -->
 <!-- ![](videos/Flumine.mp4){width=900} -->
