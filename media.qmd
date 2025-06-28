@@ -110,15 +110,15 @@ format: html
     <table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
         <tr>
             <td style="width:25%; vertical-align:top; padding-right:20px;">
-                <img src="img/DE_Gro.png" alt="Album Cover" style="width:65%; border-radius:5px;">
+                <img src="img/DE_Gro.png" alt="Album Cover" style="width:70%; border-radius:5px; margin-top:12px; margin-left:12px;">
             </td>
-            <td style="width:60%; vertical-align:top;">
+            <td style="width:75%; vertical-align:top;">
                 <p style="font-size: 14px; margin-bottom:5px;">Track 1: Seek & Hide</p>
-                <audio controls preload="metadata" src="audio/Seek&Hide.wav" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/Seek&Hide.wav" controlsList="nodownload"></audio>
                 <p style="font-size: 14px; margin-bottom:5px;">Track 2: Abduction/Corruption</p>
-                <audio controls preload="metadata" src="audio/abduct.m4a" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/abduct.m4a" controlsList="nodownload"></audio>
                 <p style="font-size: 14px; margin-bottom:5px;">Track 3: Childhood Trauma</p>
-                <audio controls preload="metadata" src="audio/CT.wav" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/CT.wav" controlsList="nodownload"></audio>
             </td>
         </tr>
     </table>
@@ -217,17 +217,17 @@ format: html
     <table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
         <tr>
             <td style="width:25%; vertical-align:top; padding-right:20px;">
-                <img src="img/sky.jpeg" alt="Album Cover" style="width:65%; border-radius:5px;">
+                <img src="img/sky.jpeg" alt="Album Cover" style="width:80%; border-radius:5px; margin-top:12px; margin-left:12px;">
             </td>
-            <td style="width:60%; vertical-align:top;">
+            <td style="width:75%; vertical-align:top;">
                 <p style="font-size: 14px; margin-bottom:5px;">Demo Track 1: Intro (Instrumental)</p>
-                <audio controls preload="metadata" src="audio/Intro.wav" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/Intro.wav" controlsList="nodownload"></audio>
                 <p style="font-size: 14px; margin-bottom:5px;">Demo Track 2: Dark (Instrumental)</p>
-                <audio controls preload="metadata" src="audio/Dark.wav" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/Dark.wav" controlsList="nodownload"></audio>
                 <p style="font-size: 14px; margin-bottom:5px;">Demo Track 3: Shadow (Instrumental)</p>
-                <audio controls preload="metadata" src="audio/Shadow.wav" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/Shadow.wav" controlsList="nodownload"></audio>
                 <p style="font-size: 14px; margin-bottom:5px;">Demo Track 4: Shadow Of The Sun (Acoustic)</p>
-                <audio controls preload="metadata" src="audio/ShadowOfTheSunAcoustic.wav" controlsList="nodownload"></audio>
+                <audio controls style="height:12px;" preload="metadata" src="audio/ShadowOfTheSunAcoustic.wav" controlsList="nodownload"></audio>
             </td>
         </tr>
     </table>
