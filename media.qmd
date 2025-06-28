@@ -251,10 +251,12 @@ format: html
         rect.bottom >= 0
       );
     }
+
     // Select all paragraphs with fade-in classes
     const fadeInText1 = document.querySelector('.fade-in-text-1');
     const fadeInText2 = document.querySelector('.fade-in-text-2');
     const fadeInText3 = document.querySelector('.fade-in-text-3');
+
     function checkFade() {
       if (fadeInText1 && isElementInViewport(fadeInText1)) {
         fadeInText1.classList.add('is-visible');
@@ -266,9 +268,11 @@ format: html
         fadeInText3.classList.add('is-visible');
       }
     }
+
     // Trigger the function on scroll and on initial load
     window.addEventListener('scroll', checkFade);
     checkFade();  // Check visibility on initial load
+
     // FIX 1: Ensure only one audio player plays at a time
     const audioElements = document.querySelectorAll('audio');
     audioElements.forEach(audio => {
@@ -276,6 +280,34 @@ format: html
         audioElements.forEach(otherAudio => {
           if (otherAudio !== this) {
             otherAudio.pause();
+          }
+        });
+        // Stop all iframes when audio plays
+        const iframeElements = document.querySelectorAll('iframe');
+        iframeElements.forEach(iframe => {
+          if (iframe.src) {
+            const currentSrc = iframe.src;
+            iframe.src = '';
+            setTimeout(() => { iframe.src = currentSrc; }, 10);
+          }
+        });
+      });
+    });
+
+    // FIX 2: Stop all media when any iframe is clicked
+    const iframeElements = document.querySelectorAll('iframe');
+    iframeElements.forEach(iframe => {
+      iframe.addEventListener('mousedown', function() {
+        // Stop all audio players
+        audioElements.forEach(audio => {
+          audio.pause();
+        });
+        // Stop all other iframes
+        iframeElements.forEach(otherIframe => {
+          if (otherIframe !== this && otherIframe.src) {
+            const currentSrc = otherIframe.src;
+            otherIframe.src = '';
+            setTimeout(() => { otherIframe.src = currentSrc; }, 10);
           }
         });
       });
@@ -288,19 +320,15 @@ format: html
 ## Youtube Videos
 
 <p><h3 style="font-size: 20px;">Flumine - Flumine | Vocals | Concert at Ericsson | Gothenburg | SE | 2022</h3></p>
-
 <iframe width="800" height="450" src="https://www.youtube.com/embed/9fbtYZf6Nog?start=447" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p><h3 style="font-size: 20px;">Drowning Echo - Childhood Trauma | Drums | Concert at Simplon | Groningen | NL | 2021</h3></p>
-
 <iframe width="800" height="450" src="https://www.youtube.com/embed/R-5bPfr2LZM?start=245" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p><h3 style="font-size: 20px;">Ioana Iorgu - Thick Skin | Drums | Live Stream | Groningen | NL | 2021</h3></p>
-
 <iframe width="800" height="450" src="https://www.youtube.com/embed/W7rr2w2sQbE?start=177" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p><h3 style="font-size: 20px;">Flight 1549 - I Need A Break | Vocals | "Rock in der Stadthalle" | Bad Schwalbach | DE | 2011</h3></p>
-
 <iframe width="800" height="450" src="https://www.youtube.com/embed/CXIXjT9AboE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
@@ -308,6 +336,7 @@ format: html
 ## Concert Videos
 
 <!-- Concert Videos with Fixed Google Drive Embeds -->
+
 <h3 style="font-size: 20px;">Flumine - Dis/Closure | Vocals | Concert at Roy Mölndal | Gothenburg | SE | 2023</h3>
 <iframe src="https://drive.google.com/file/d/1wPqJtaUivmxZX1ksPXKIqcSHGX7RsIWS/preview?rm=minimal"
         width="800" height="450"

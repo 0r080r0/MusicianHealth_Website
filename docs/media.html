@@ -413,10 +413,12 @@ Demo Track 4: Shadow Of The Sun (Acoustic)
         rect.bottom >= 0
       );
     }
+
     // Select all paragraphs with fade-in classes
     const fadeInText1 = document.querySelector('.fade-in-text-1');
     const fadeInText2 = document.querySelector('.fade-in-text-2');
     const fadeInText3 = document.querySelector('.fade-in-text-3');
+
     function checkFade() {
       if (fadeInText1 && isElementInViewport(fadeInText1)) {
         fadeInText1.classList.add('is-visible');
@@ -428,9 +430,11 @@ Demo Track 4: Shadow Of The Sun (Acoustic)
         fadeInText3.classList.add('is-visible');
       }
     }
+
     // Trigger the function on scroll and on initial load
     window.addEventListener('scroll', checkFade);
     checkFade();  // Check visibility on initial load
+
     // FIX 1: Ensure only one audio player plays at a time
     const audioElements = document.querySelectorAll('audio');
     audioElements.forEach(audio => {
@@ -438,6 +442,34 @@ Demo Track 4: Shadow Of The Sun (Acoustic)
         audioElements.forEach(otherAudio => {
           if (otherAudio !== this) {
             otherAudio.pause();
+          }
+        });
+        // Stop all iframes when audio plays
+        const iframeElements = document.querySelectorAll('iframe');
+        iframeElements.forEach(iframe => {
+          if (iframe.src) {
+            const currentSrc = iframe.src;
+            iframe.src = '';
+            setTimeout(() => { iframe.src = currentSrc; }, 10);
+          }
+        });
+      });
+    });
+
+    // FIX 2: Stop all media when any iframe is clicked
+    const iframeElements = document.querySelectorAll('iframe');
+    iframeElements.forEach(iframe => {
+      iframe.addEventListener('mousedown', function() {
+        // Stop all audio players
+        audioElements.forEach(audio => {
+          audio.pause();
+        });
+        // Stop all other iframes
+        iframeElements.forEach(otherIframe => {
+          if (otherIframe !== this && otherIframe.src) {
+            const currentSrc = otherIframe.src;
+            otherIframe.src = '';
+            setTimeout(() => { otherIframe.src = currentSrc; }, 10);
           }
         });
       });
