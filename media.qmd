@@ -105,6 +105,7 @@ format: html
         }
     </style>
 </head>
+
 <body>
     <p><strong style="color: #9A670E;">**"Single: Drowning Echo - C.T. (Live at Simplon Poppodium)"**</strong></p>
     <table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
@@ -217,7 +218,7 @@ format: html
     <table style="width:100%; border:none; background-color: rgba(25,25,25,0.8); border-radius:8px; padding:10px;">
         <tr>
             <td style="width:25%; vertical-align:top; padding-right:20px;">
-                <img src="img/sky.jpeg" alt="Album Cover" style="width:80%; border-radius:5px; margin-top:12px; margin-left:12px;">
+                <img src="img/sky.jpeg" alt="Album Cover" style="width:70%; border-radius:5px; margin-top:12px; margin-left:12px;">
             </td>
             <td style="width:75%; vertical-align:top;">
                 <p style="font-size: 14px; margin-bottom:5px;">Demo Track 1: Intro (Instrumental)</p>

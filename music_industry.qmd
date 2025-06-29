@@ -13,28 +13,30 @@ title: "Music Industry Experience" # "Backstage or Professional Experience"
 
 ## Professional Experience
 
-<div class="job-entry" style="display: flex;">  <div class="job-image" style="width: 40%;">  <img src="img/believe.jpeg" alt="Believe Digital" style="width: 95%;"> </div>
-  <div class="job-text fade-in" style="flex: 1; margin-left: 20px;"> <strong style="color: #9A670E;">
-      International Music Marketing | Believe Digital | Working Student | Part-Time | Remote | Hamburg | DE | 2022-2023
+<div class="job-entry" style="display: flex;">  <div class="job-image" style="width: 30%;">  <img src="img/believe.jpeg" alt="Believe Digital" style="width:90%;"> </div>
+  <div class="job-text fade-in" style="flex: 1; margin-left: 0px;"> <strong style="color: #9A670E;">
+      International Music Marketing | Believe Digital | Working Student | Part-Time  Remote | Hamburg | DE | 2022-2023
     </strong>
-    <br><br>
+    <br>
     Key assistant in international music trade marketing, specialising in the promotion of rock and metal musicians. Played a pivotal role in artist visibility and audience engagement by leveraging data-driven insights and innovative marketing techniques tailored to the genre. Collaborated effectively with artists, labels, and DSPs to support promotional and distribution efforts.
   </div>
 </div>
 
 <div class="fade-in">
   <strong style="color: #9A670E;">
+   <br>
     Rich Content Writer | Remise3 Media | Working Student | Part-Time | Remote | Hamburg | DE | 2019-2020
   </strong>
-  <br><br> <!-- Two line breaks for more space -->
+  <br>
   Crafted technical yet creatively engaging articles about music instruments and professional audio equipment. Executed in-depth research to create rich and insightful content for a leading European online retailer in professional audio equipment. Collaborated with product experts to ensure accuracy and technical precision in all content. Enhanced product visibility through compelling descriptions, driving customer engagement and supporting sales initiatives.
 </div>
 
 <div class="fade-in">
   <strong style="color: #9A670E;">
+   <br>
     Assistant Sound Engineer | KlangBezirk | Full-Time | Internship | Wiesbaden | DE | 2014-2015
   </strong>
-  <br><br> <!-- Two line breaks for more space -->
+  <br>
   Gained invaluable experience in a prestigious, professional recording studio renowned for its work on high-profile projects and with prominent musicians. Acquired solid skills in sound design, voice and music recording, editing, mixing, and pre-mastering using industry-leading audio software such as ProTools. Contributed to producing high-quality audio for TV shows and cinematic projects, ensuring the sound complemented and enhanced the visual storytelling. The studio's reputation for excellence in both production and post-production provided an exceptional environment for growth and learning in the world of professional audio.
 </div>
 
@@ -44,19 +46,20 @@ title: "Music Industry Experience" # "Backstage or Professional Experience"
   <strong style="color: #9A670E;">
     Videographer & Interviewer | Youth Culture Festival | Part-Time | Wiesbaden | DE | 2014-2015
   </strong>
-  <br><br> <!-- Two line breaks for more space -->
+  <br>
   Volunteered as a Host at a local music festival, involving responsibilities such as filming interviews with musicians and festival-goers, as well as conducting interviews. Throughout the event, key information was communicated to the audience to keep them engaged and informed. Additionally, an aftermovie was created, capturing the festival’s vibrant atmosphere and highlighting its key moments. This experience contributed to the development of skills in communication, event coverage, and video production, offering insights into the challenges musicians face during live performances.
 </div>
 
 <div class="fade-in">
   <strong style="color: #9A670E;">
+   <br>
     Assistant Sound Engineer | Gymnasium am Mosbacher Berg & FeG | Casual | Wiesbaden | DE | 2010-2012
   </strong>
-  <br><br> <!-- Two line breaks for more space -->
+  <br>
   Volunteered as an assistant sound engineer for events and performances at high school and at a local community center over two years, assisting with equipment care, stage and instrument setup, sound checks, and recording concerts for both small bands and orchestras. Participated weekly in a Sound Engineering Club, gaining hands-on experience in sound recording, signal transmission, and the physics of sound, which enhanced the quality of both musical performances and live sound setups, including instruments and vocals.
 </div>
 
-<!-- Add CSS for fade-in effect -->
+<!-- CSS for fade-in effect -->
 <style>
   .fade-in {
     opacity: 0;
@@ -85,7 +88,7 @@ title: "Music Industry Experience" # "Backstage or Professional Experience"
   }
 </style>
 
-<!-- Add JavaScript for triggering the fade-in effect on scroll -->
+<!-- JavaScript for triggering the fade-in effect on scroll -->
 <script>
   // Select all the elements with the class 'fade-in'
   const fadeInElements = document.querySelectorAll('.fade-in');
