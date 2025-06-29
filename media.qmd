@@ -114,12 +114,12 @@ format: html
                 <img src="img/DE_Gro.png" alt="Album Cover" style="width:70%; border-radius:5px; margin-top:12px; margin-left:12px;">
             </td>
             <td style="width:75%; vertical-align:top;">
-                <p style="font-size: 14px; margin-bottom:5px;">Track 1: Seek & Hide</p>
-                <audio controls style="height:12px;" preload="metadata" src="audio/Seek&Hide.wav" controlsList="nodownload"></audio>
-                <p style="font-size: 14px; margin-bottom:5px;">Track 2: Abduction/Corruption</p>
-                <audio controls style="height:12px;" preload="metadata" src="audio/abduct.m4a" controlsList="nodownload"></audio>
-                <p style="font-size: 14px; margin-bottom:5px;">Track 3: Childhood Trauma</p>
+                <p style="font-size: 14px; margin-bottom:5px;">Track 1: Childhood Trauma</p>
                 <audio controls style="height:12px;" preload="metadata" src="audio/CT.wav" controlsList="nodownload"></audio>
+                <p style="font-size: 14px; margin-bottom:5px;">Track 2: Seek & Hide</p>
+                <audio controls style="height:12px;" preload="metadata" src="audio/Seek&Hide.wav" controlsList="nodownload"></audio>
+                <p style="font-size: 14px; margin-bottom:5px;">Track 3: Abduction/Corruption</p>
+                <audio controls style="height:12px;" preload="metadata" src="audio/abduct.m4a" controlsList="nodownload"></audio>
             </td>
         </tr>
     </table>
