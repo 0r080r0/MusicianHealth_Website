@@ -2,7 +2,7 @@
 
 https://evangelia-music.netlify.app/
 
-**Website** 
+**Website**
 
 This website showcases my journey and skills for a PhD in Musicians' Health, sharing my journey as a musician, my behind-the-scenes work in the music industry, and my ongoing commitment to advancing the wellbeing of musicians.
 
